@@ -11,7 +11,7 @@ public class HelloSpringApp {
 		//retrieve bean from container
 		BasicCoach theCoach = context.getBean("myCoach", BasicCoach.class);
 		
-		//caling method from bean
+		//calling method from bean
 		System.out.println(theCoach.getDailyWorkout());
 		
 		//closing the context
