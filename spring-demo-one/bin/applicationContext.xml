@@ -10,7 +10,9 @@
 	<!-- add entry to enable component scanning -->
 
 	<context:component-scan base-package="com.luv2code.springdemo" ></context:component-scan>
-
+	<bean id="myCoach"
+		class="com.excercises.springdemo.TrackCoach">
+	</bean>
 </beans>
 
 
