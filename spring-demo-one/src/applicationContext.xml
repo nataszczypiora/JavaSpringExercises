@@ -10,8 +10,14 @@
 	<!-- add entry to enable component scanning -->
 
 	<context:component-scan base-package="com.luv2code.springdemo" ></context:component-scan>
-	<bean id="myCoach"
+	<bean id="TrackCoach"
+		class="com.excercises.springdemo.TrackCoach">
+	</bean>
+	<bean id="BaseballCoach"
 		class="com.excercises.springdemo.BaseballCoach">
+	</bean>
+	<bean id="TennisCoach"
+		class="com.excercises.springdemo.TennisCoach">
 	</bean>
 	<bean id="myLoggerConfig" class = "loggin.settings.MyLoggerConfig" init-method="initLogger">
 		<property name="rootLoggerLevel" value="FINE" />

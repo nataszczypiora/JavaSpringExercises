@@ -1,3 +1,4 @@
-/applicationContext.xml
+/tests.class
 /com/
-/loggin/
+/HelloSpringAppSpec.class
+/Exceptions/

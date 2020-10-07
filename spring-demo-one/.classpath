@@ -69,5 +69,8 @@
 	<classpathentry kind="lib" path="libs/spring-websocket-5.2.9.RELEASE.jar"/>
 	<classpathentry kind="lib" path="libs/spring-websocket-5.2.9.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="libs/spring-websocket-5.2.9.RELEASE-sources.jar"/>
+	<classpathentry kind="con" path="GROOVY_DSL_SUPPORT"/>
+	<classpathentry kind="con" path="GROOVY_SUPPORT"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
