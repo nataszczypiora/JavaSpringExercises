@@ -7,29 +7,22 @@ import Exceptions.CoachDoesNotExistException;
 public class HelloSpringApp {
 
 	public static void main(String[] args) {
-		String typeOfCoach = ("BaseballCoach");
-		System.out.println(callingCoach(typeOfCoach));
-	}
-	
-	
-	public static String callingCoach(String typeOfCoach)
-	{
 		//load the spring configuration file (creating the spring container)
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-				
-		if (typeOfCoach != "BaseballCoach" && typeOfCoach != "TrackCoach" && typeOfCoach != "TennisCoach")
-		{
-			context.close();
-			throw new CoachDoesNotExistException(typeOfCoach);
-		}
-		
 		//retrieve bean from container			
-		BasicCoach theCoach = context.getBean(typeOfCoach, BasicCoach.class);		
-		
+		BasicCoach theCoach = context.getBean("myCoach", BasicCoach.class);		
+		if(!((theCoach instanceof BaseballCoach) || (theCoach instanceof TrackCoach) || (theCoach instanceof TennisCoach))){
+			context.close();
+			throw new CoachDoesNotExistException(theCoach.toString());
+		}
+		String result = callingCoach(theCoach);
+		System.out.println(result);
 		//closing the context
 		context.close();
-			
+	}
+	public static String callingCoach(BasicCoach coach)
+	{	
 		//calling method from bean
-		return theCoach.getDailyWorkout();						
+		return coach.getDailyWorkout() + " " + coach.getDailyFortune();						
 	}
 }

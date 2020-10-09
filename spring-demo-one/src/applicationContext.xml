@@ -10,15 +10,17 @@
 	<!-- add entry to enable component scanning -->
 
 	<context:component-scan base-package="com.luv2code.springdemo" ></context:component-scan>
-	<bean id="TrackCoach"
-		class="com.excercises.springdemo.TrackCoach">
+	<bean id="myFortune"
+		class="com.excercises.springdemo.HappyFortuneService">
 	</bean>
-	<bean id="BaseballCoach"
+	<bean id="myCoach"
 		class="com.excercises.springdemo.BaseballCoach">
+		
+		<!--set up constructor injection -->
+		<constructor-arg ref="myFortune"/>
 	</bean>
-	<bean id="TennisCoach"
-		class="com.excercises.springdemo.TennisCoach">
-	</bean>
+
+
 	<bean id="myLoggerConfig" class = "loggin.settings.MyLoggerConfig" init-method="initLogger">
 		<property name="rootLoggerLevel" value="FINE" />
 		<property name="printedLoggerLevel" value="FINE" />

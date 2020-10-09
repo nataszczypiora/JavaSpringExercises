@@ -2,6 +2,11 @@ package com.excercises.springdemo;
 
 public class BaseballCoach implements BasicCoach{
 	
+	//create a field to hold FortuneService and constructor for BaseballCoach
+	private FortuneService fortuneService;
+	public BaseballCoach(FortuneService fortuneservice) {
+		this.fortuneService = fortuneservice;
+	}
 	@Override
 	public String getDailyWorkout()
 	{
@@ -10,6 +15,7 @@ public class BaseballCoach implements BasicCoach{
 
 	@Override
 	public String getDailyFortune() {
-		return null;
+		//use fortuneService to get a fortune
+		return fortuneService.getFortune();
 	}
 }
