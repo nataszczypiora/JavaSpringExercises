@@ -13,12 +13,24 @@
 	<bean id="myFortune"
 		class="com.excercises.springdemo.HappyFortuneService">
 	</bean>
-	<bean id="myCoach"
-		class="com.excercises.springdemo.BaseballCoach">
+	
+	<bean id="myCoachConstructorInj"
+		class="com.excercises.springdemo.TrackCoach">
 		
 		<!--set up constructor injection -->
 		<constructor-arg ref="myFortune"/>
+
 	</bean>
+	<bean id="myCoachSetterInj"
+		class ="com.excercises.springdemo.CricketCoach">
+	
+		<!--set up setter injection -->
+		<property name="fortuneService" ref="myFortune"></property>
+		<!--> inject values -->
+		<property name="email" value="frodo@mat.umk.pl"/>
+		<property name="team" value="cocksuckers"/>
+	</bean>
+	
 
 
 	<bean id="myLoggerConfig" class = "loggin.settings.MyLoggerConfig" init-method="initLogger">

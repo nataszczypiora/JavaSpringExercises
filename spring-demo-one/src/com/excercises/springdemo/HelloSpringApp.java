@@ -10,8 +10,9 @@ public class HelloSpringApp {
 		//load the spring configuration file (creating the spring container)
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		//retrieve bean from container			
-		BasicCoach theCoach = context.getBean("myCoach", BasicCoach.class);		
-		if(!((theCoach instanceof BaseballCoach) || (theCoach instanceof TrackCoach) || (theCoach instanceof TennisCoach))){
+//		BasicCoach theCoach = context.getBean("myCoachConstructorInj", BasicCoach.class);		
+		BasicCoach theCoach = context.getBean("myCoachSetterInj", BasicCoach.class);		
+		if(!((theCoach instanceof BaseballCoach) || (theCoach instanceof TrackCoach) || (theCoach instanceof CricketCoach))){
 			context.close();
 			throw new CoachDoesNotExistException(theCoach.toString());
 		}

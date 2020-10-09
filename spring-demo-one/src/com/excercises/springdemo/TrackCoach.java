@@ -2,11 +2,17 @@ package com.excercises.springdemo;
 
 public class TrackCoach implements BasicCoach {
 
-	//create a field to hold FortuneService and constructor for BaseballCoach
+	//create a field to hold FortuneService 
 	private FortuneService fortuneService;
+//  constructor injection	
 	public TrackCoach(FortuneService fortuneservice) {
 		this.fortuneService = fortuneservice;
 	}	
+	
+//  setter injection
+//	public void setFortuneService(FortuneService fortuneService) {
+//		this.fortuneService = fortuneService;
+//	}
 	@Override
 	public String getDailyWorkout() {
 		return "Do a running";
