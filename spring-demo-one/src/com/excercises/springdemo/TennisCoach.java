@@ -5,4 +5,10 @@ public class TennisCoach implements BasicCoach{
 	public String getDailyWorkout() {
 		return "Do something with tennis (sports aren't really my thing, sorry)";
 	}
+
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

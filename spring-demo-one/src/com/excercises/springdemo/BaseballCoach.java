@@ -7,4 +7,9 @@ public class BaseballCoach implements BasicCoach{
 	{
 		return "Play baseball";
 	}
+
+	@Override
+	public String getDailyFortune() {
+		return null;
+	}
 }

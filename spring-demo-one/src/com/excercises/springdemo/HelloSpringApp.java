@@ -7,7 +7,8 @@ import Exceptions.CoachDoesNotExistException;
 public class HelloSpringApp {
 
 	public static void main(String[] args) {
-		
+		String typeOfCoach = ("BaseballCoach");
+		System.out.println(callingCoach(typeOfCoach));
 	}
 	
 	

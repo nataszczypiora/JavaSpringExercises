@@ -7,4 +7,10 @@ public class TrackCoach implements BasicCoach {
 		return "Do a running";
 	}
 
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
